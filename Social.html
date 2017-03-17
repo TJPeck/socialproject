@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>
+    <link rel="stylesheet" href="CosmoS.css">
+     <script type="text/javascript" src="JS.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <nav id ="Nev" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Boardwork</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+    </nav>
+</head>
+<body> 
+  <div class="row">
+       <div class="col-md-2">
+   
+        <div id="wrappers">
+            <div id="menu">
+                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+                <div style="clear:both"></div>
+            </div>    
+            <div id="chatbox"></div>
+     
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" size="63" />
+        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+    </form>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script type="text/javascript">
+// jQuery Document
+$(document).ready(function(){
+});
+</script>
+<?php
+}
+?>
+      </div>
+       <div class="col-md-8">
+<!-- Wrapper Begins -->
+<div id="wrapper"> 
+  <div id="blackboardPlaceholder"> 
+    <p><!-- Tool Selector --><select name="selector" id="selector"><option value="chalk">Chalk</option><option value="line">Line</option><option value="rect">Rectangle</option></select></p> 
+    <canvas id="drawingCanvas" height="532" width="897"> 
+        <p class="noscript">We're sorry, this web application is currently not supported with your browser. Please use an alternate browser or download a supported <br />browser. Supported browsers: <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.opera.com">Opera</a>, <a href="http://www.mozilla.com">Firefox</a>, <a href="http://www.apple.com/safari">Safari</a>, <br />and <a href="http://www.konqueror.org">Konqueror</a>. Also make sure your JavaScript is enabled.
+        </p>
+      </canvas>   
+    <div id="whiteChalk_button" onclick="context.lineWidth = '1.0';"><img src="white.png" width="71" height="17" onclick="context.strokeStyle = '#FFFFFF';" /></div>     
+    <div id="redChalk_button" onclick="context.lineWidth = '1.0';"><img src="Red.png" width="71" height="17" onclick="context.strokeStyle = '#F00000';" /> </div> 
+    <div id="orangeChalk_button" onclick="context.lineWidth = '1.0';"><img src="Orange.png" width="71" height="17" onclick="context.strokeStyle = '#ff9600';" /> </div> 
+    <div id="yellowChalk_button" onclick="context.lineWidth = '1.0';"><img src="Yellow.png" width="71" height="17" onclick="context.strokeStyle = '#fff600';" /></div> 
+    <div id="greenChalk_button" onclick="context.lineWidth = '1.0';"><img src="Green.png" width="71" height="17" onclick="context.strokeStyle = '#48ff00';" /></div> 
+    <div id="blueChalk_button" onclick="context.lineWidth = '1.0';"><img src="Blue.png" width="71" height="17" onclick="context.strokeStyle = '#001eff';" /></div> 
+    <div id="pinkChalk_button" onclick="context.lineWidth = '1.0';"><img src="Pink.png" width="71" height="17" onclick="context.strokeStyle = '#ff00d2';" /></div> 
+  <div id="eraser" onclick="context.strokeStyle = '#424242'; context.lineWidth = '22';"></div>
+    </div> 
+</div>
+           </div>
+      <div class="col-md-2"><button onclick="Fbase()">Click Me</button></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB1UY165RXHBP_JSz-8PEwIGaay7X_B2-o",
+    authDomain: "timothy-peck-review-proj.firebaseapp.com",
+    databaseURL: "https://timothy-peck-review-proj.firebaseio.com",
+    storageBucket: "timothy-peck-review-proj.appspot.com",
+    messagingSenderId: "1090661775430"
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body> 
+</html>
+ 
